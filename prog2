@@ -1,0 +1,52 @@
+/* figure: prog2.cpp																	*/
+/****************************************************************************************/
+/* Название файла: prog2.cpp															*/
+/* Теория: эта программа создает таблицу по заданной функции							*/
+/* Описание: вычисление значений функции на определенном интервале						*/
+/* Дата: 2021 / 10 / 9																	*/
+/* Автор: Комарова Е. Л.																*/
+/* Версия: 1																			*/
+/****************************************************************************************/
+
+#include <iostream>
+using namespace std;
+#include <math.h>
+
+int main()
+{
+	printf_s(
+			"***********************************************************\n\
+			*Nizhniy Novgorod Technical University*\n\
+			* Study work number 2. Task number 2. *\n\
+			*Performed student 21IVT-2 Komarova Ekaterina*\n\
+			***********************************************************\n"
+			);
+
+	double y, min, max, s, n;
+
+	max = 0;
+	min = 1000;
+	n = 0;
+	s = 0;
+
+	for (double x = 0.05; x < 1.6; x += 0.05) {
+		y = 8 * pow(x, 2) + pow(pow(x, 4), 1 / 3) - 4 / x - 2 / pow(x, 3);
+	
+		if (max < y) {
+			max = y;
+		}
+		if (min > y) {
+			min = y;
+		}
+
+		n = n + 1;
+		s = s + y;
+
+		cout << "x = " << x << "  |  " << "y = " << y << "\n";
+
+	}
+
+	cout << "minimal'noe znachenie = " << min << "\n\maksimal'noe znachenie = " << max << "\n\srednee znachenie = " << s/n ;
+
+	return 0;
+}
